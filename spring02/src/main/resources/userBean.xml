@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--注意实体类的set方法-->
+    <bean id="user" class="com.pei.spring_02.pojo.User">
+        <!--引入实体类-->
+        <property name="address" ref="address"/>
+        <!--引入string[]，也可用这种方式-->
+        <property name="books">
+            <array>
+                <value>西游记</value>
+                <value>红楼梦</value>
+                <value>三国</value>
+            </array>
+        </property>
+        <property name="name" value="张三"/>
+        <!--引入map，也可用这种方式-->
+        <property name="card">
+            <map>
+                <entry key="身份证" value="1233211234567"/>
+                <entry key="银行卡" value="3211237654321"/>
+            </map>
+        </property>
+        <!--引入list，也可用这种方式-->
+        <property name="hobbys">
+            <list>
+                <value>看漫画</value>
+                <value>打游戏</value>
+                <value>发呆</value>
+            </list>
+        </property>
+        <property name="phone" value="1233211231"/>
+        <property name="properties">
+            <props>
+                <prop key="身高">180</prop>
+                <prop key="体重">180</prop>
+            </props>
+        </property>
+        <property name="games">
+            <set>
+                <value>lol</value>
+                <value>bob</value>
+            </set>
+        </property>
+        <property name="wife">
+            <null/>
+        </property>
+    </bean>
+
+    <bean id="address" class="com.pei.spring_02.pojo.Address">
+        <property name="addressName" value="杭州"/>
+    </bean>
+
+    <!-- more bean definitions go here -->
+
+</beans>
